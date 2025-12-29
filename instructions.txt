@@ -1,0 +1,13 @@
+Understand the context first, and donot generate any code here enter
+We have build a regression model utilizing california housing dataset from the sklearn library enter
+We have utilized linear regression, ridge and lasso regression under this model enter
+Now we want to create a chatbot, utilizing this theme 
+We want to use NLTK library only 
+In the initial stage we want a simple chatbot with a corpus having questions and answers for the chatbot
+Now first i want to design such a model,utilizing jupyter notebook(it already contains the regression models) only
+After creating jupyter notebooks we want to link the app.py file(it already contains regression models)
+We need all the code to simple and easy to understand that is of beginner level
+Help me in the generation of code step by step
+If any kind of dumping is required kindly use joblib and pickle
+Now you understand the scnerio and now you are allow to generate the code step by step.
+
