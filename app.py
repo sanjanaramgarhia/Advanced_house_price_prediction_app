@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 import numpy as np
 import joblib
 import pickle
@@ -15,8 +14,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # Set page config ONCE
 st.set_page_config(page_title="House Price Prediction App",layout = "wide")
-os.environ["SKLEARN_DATA"] = "/tmp/sklearn_data"
-
 
 mainSection = st.container()
 
@@ -174,13 +171,10 @@ def show_main_page():
 
         # Load the dataset
         try:
-            data = fetch_california_housing()
-            df = pd.DataFrame(data.data, columns=data.feature_names)
-            df["MedHouseVal"] = data.target
+          df = pd.read_csv("california_housing.csv")
         except Exception as e:
-            st.error(f"Dataset loading failed: {str(e)}")
-            st.error("Unable to fetch California Housing dataset from sklearn. Please check your internet connection.")
-            st.stop()
+          st.error("Dataset not found. Please check file path.")
+          st.stop()
 
         # --- Load Resources ---
         with open("corpus.pkl", "rb") as f:
@@ -689,3 +683,4 @@ For professional real estate advice, consult with licensed real estate professio
 
 with mainSection:
     show_main_page()
+
