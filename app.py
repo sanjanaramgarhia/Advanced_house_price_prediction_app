@@ -183,6 +183,7 @@ def show_main_page():
         @st.cache_resource
         def download_nltk_data():
             nltk.download("punkt")
+            nltk.download('punkt_tab')
             nltk.download("wordnet")
             nltk.download("omw-1.4")
             nltk.download("averaged_perceptron_tagger")
@@ -688,5 +689,6 @@ For professional real estate advice, consult with licensed real estate professio
 
 with mainSection:
     show_main_page()
+
 
 
