@@ -180,9 +180,14 @@ def show_main_page():
         with open("corpus.pkl", "rb") as f:
             qa_corpus = pickle.load(f)
 
-        nltk.download('punkt')
-        nltk.download('wordnet')
-        nltk.download('averaged_perceptron_tagger')
+        @st.cache_resource
+        def download_nltk_data():
+            nltk.download("punkt")
+            nltk.download("wordnet")
+            nltk.download("omw-1.4")
+            nltk.download("averaged_perceptron_tagger")
+        
+        download_nltk_data()
 
         stemmer = PorterStemmer()
         lemmatizer = WordNetLemmatizer()
@@ -683,4 +688,5 @@ For professional real estate advice, consult with licensed real estate professio
 
 with mainSection:
     show_main_page()
+
 
